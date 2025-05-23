@@ -349,24 +349,3 @@ body {
     transform: translateY(-10px) rotate(var(--rotation));
   }
 }
-
-.shape-1 {
-  --rotation: -15deg;
-  animation: float 6s ease-in-out infinite;
-}
-.shape-2 {
-  --rotation: 25deg;
-  animation: float 4s ease-in-out infinite 0.5s;
-}
-.shape-3 {
-  --rotation: 10deg;
-  animation: float 5s ease-in-out infinite 1s;
-}
-.shape-4 {
-  --rotation: -20deg;
-  animation: float 4.5s ease-in-out infinite 1.5s;
-}
-.shape-5 {
-  --rotation: 45deg;
-  animation: float 3.5s ease-in-out infinite 2s;
-}
