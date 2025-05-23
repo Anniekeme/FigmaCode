@@ -1,0 +1,381 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.menu-icon {
+  width: 24px;
+  height: 18px;
+  position: relative;
+}
+
+.menu-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #000;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Mobile Menu Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100vh;
+  background: white;
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-overlay.active {
+  transform: translateX(0);
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #eee;
+  background: #f8f9fa;
+}
+
+.menu-logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: #000;
+  padding: 8px;
+}
+
+.menu-content {
+  padding: 32px 24px;
+}
+
+.menu-nav {
+  list-style: none;
+}
+
+.menu-nav li {
+  margin-bottom: 24px;
+}
+
+.menu-nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 8px 0;
+}
+
+.menu-nav a:hover {
+  color: #ff6b6b;
+}
+
+/* Backdrop */
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.menu-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hero-image {
+  width: 100%;
+  height: 240px;
+  background: linear-gradient(
+    135deg,
+    #ff6b6b,
+    #4ecdc4,
+    #45b7d1,
+    #96ceb4,
+    #feca57,
+    #ff9ff3,
+    #54a0ff
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  padding: 24px 20px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.description {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.cta-button {
+  background: #ff6b6b;
+  color: white;
+  padding: 16px 32px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.cta-button:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+}
+
+/* News Section Styles */
+.news-section {
+  background: #1a1a2e;
+  color: white;
+  padding: 24px 20px;
+}
+
+.section-header {
+  margin-bottom: 24px;
+}
+
+.new-badge {
+  color: white;
+  padding: 6px 12px;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.news-item {
+  border-bottom: 1px solid #333;
+  padding-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.news-item:hover {
+  transform: translateX(8px);
+}
+
+.news-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.news-item:hover .news-title {
+  color: #ff6b6b;
+}
+
+.news-description {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Featured Section Styles */
+.featured-section {
+  background: #f8f9fa;
+  padding: 40px 24px;
+}
+
+.featured-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.featured-item {
+  display: flex;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.featured-item:hover {
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.featured-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.featured-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ccc;
+  margin-bottom: 8px;
+  font-family: serif;
+}
+
+.featured-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.featured-item:hover .featured-title {
+  color: #ff6b6b;
+}
+
+.featured-description {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Tablet styles */
+/* @media (min-width: 768px) {
+  
+} */
+/* Desktop styles */
+/* @media (min-width: 1024px) {
+  
+} */
+
+/* Animation for shapes */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(var(--rotation));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--rotation));
+  }
+}
+
+.shape-1 {
+  --rotation: -15deg;
+  animation: float 6s ease-in-out infinite;
+}
+.shape-2 {
+  --rotation: 25deg;
+  animation: float 4s ease-in-out infinite 0.5s;
+}
+.shape-3 {
+  --rotation: 10deg;
+  animation: float 5s ease-in-out infinite 1s;
+}
+.shape-4 {
+  --rotation: -20deg;
+  animation: float 4.5s ease-in-out infinite 1.5s;
+}
+.shape-5 {
+  --rotation: 45deg;
+  animation: float 3.5s ease-in-out infinite 2s;
+}
